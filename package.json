@@ -1,0 +1,26 @@
+{
+  "name": "wetube-reloads",
+  "version": "1.0.0",
+  "description": "weTube - clone",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kimdong11/wetube-reloads.git"
+  },
+  "author": "DONGH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kimdong11/wetube-reloads/issues"
+  },
+  "scripts": {
+    "dev" : "nodemon --exec  babel-node src/server.js"
+  },
+  "homepage": "https://github.com/Kimdong11/wetube-reloads#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6"
+  }
+}
