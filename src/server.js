@@ -16,4 +16,4 @@ app.use("/users", userRouter)
 const handleListening = () => 
 console.log(`Server listening on http://localhost:${PORT}`);
 
-app.listen(4000, handleListening);
+app.listen(PORT, handleListening);
