@@ -49,6 +49,7 @@ export const getUpload = (req, res) => {
 };
 export const postUpload = (req, res) => {
     const {title} = req.body
+    console.log(title);
     const newVideo = 
         {
             title,
@@ -61,3 +62,4 @@ export const postUpload = (req, res) => {
     videos.push(newVideo);
     return res.redirect("/");
 };
+
