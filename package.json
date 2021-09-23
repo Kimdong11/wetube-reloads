@@ -12,11 +12,12 @@
     "url": "https://github.com/Kimdong11/wetube-reloads/issues"
   },
   "scripts": {
-    "dev": "nodemon --exec  babel-node src/server.js"
+    "dev": "nodemon --exec  babel-node src/init.js"
   },
   "homepage": "https://github.com/Kimdong11/wetube-reloads#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^6.0.7",
     "morgan": "^1.10.0",
     "pug": "^3.0.2"
   },
