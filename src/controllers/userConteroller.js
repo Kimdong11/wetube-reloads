@@ -30,6 +30,8 @@ export const getLogin = (req, res) => res.render("login", {pageTitle:"Login"});
 export const postLogin = async (req, res) =>  {
     const {username, password} = req.body;
     const user = await User.findOne({username, githubId: false});
+    console.log(password);
+    console.log(user);
     if(!user) {
         return res.status(400).render("login", {pageTitle: "Login", errorMessage: "Username does not exist"});   
     }
@@ -134,8 +136,6 @@ export const postEdit = async (req, res) => {
         body: {email, name, username, location},
         file    
          } = req;
-         console.log(file);
-    
         const updateUser =  await User.findByIdAndUpdate(_id, 
             {
                 avatarUrl: file ? file.path : avatarUrl,
@@ -150,7 +150,6 @@ export const postEdit = async (req, res) => {
     };
 
 export const getChangePassword = (req, res) => {
-    
     return res.render("change-password", {pageTitle: "Change Password"});
 }
 export const postChangePassword = async (req, res) => {

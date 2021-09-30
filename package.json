@@ -12,7 +12,8 @@
     "url": "https://github.com/Kimdong11/wetube-reloads/issues"
   },
   "scripts": {
-    "dev": "nodemon --exec  babel-node src/init.js"
+    "dev:server": "nodemon",
+    "dev:assets": "webpack --config webpack.config.js"
   },
   "homepage": "https://github.com/Kimdong11/wetube-reloads#readme",
   "dependencies": {
@@ -31,6 +32,13 @@
     "@babel/core": "^7.15.5",
     "@babel/node": "^7.15.4",
     "@babel/preset-env": "^7.15.6",
-    "nodemon": "^2.0.12"
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.3.0",
+    "mini-css-extract-plugin": "^2.3.0",
+    "nodemon": "^2.0.12",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.55.1",
+    "webpack-cli": "^4.8.0"
   }
 }
