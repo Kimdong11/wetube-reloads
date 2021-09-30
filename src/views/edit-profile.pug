@@ -1,0 +1,18 @@
+extends base
+
+block content 
+    if errorMessage
+        div 
+            h2=errorMessage
+    img(src="/" + loggedInUser.avatarUrl, width="100", height="100")
+    form(method="POST", enctype="multipart/form-data")
+        label Avatar
+            input(type="file", id="avatar", name="avatar", accept="image/*")
+        input(name="email",type="email", placeholder="Email", required, value=loggedInUser.email)
+        input(name="username" placeholder="User Name", required, type="text", value=loggedInUser.username)
+        input(name="name" placeholder="Name", required, type="text", value=loggedInUser.name)
+        input(name="location", placeholder="location", required, type="text", value=loggedInUser.location)
+        input(type="submit", value="Update Profile")
+        if !loggedInUser.githubId
+            hr
+            a(href="change-password") Change Password &rarr; 
