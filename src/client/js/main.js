@@ -1,3 +1,3 @@
-import "../scss/styles.scss"
+import "../scss/screens/styles.scss";
 
 console.log("HI");
