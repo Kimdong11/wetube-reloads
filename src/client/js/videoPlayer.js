@@ -1,3 +1,5 @@
+import { fetchFile } from "@ffmpeg/ffmpeg";
+
 const video = document.querySelector("video");
 const playBtn = document.getElementById("play");
 const muteBtn = document.getElementById("mute");
@@ -94,11 +96,19 @@ const hadleVideoMouseLeave = () => {
     controlsTimeOut = setTimeout(hideControls, 3000);
 };
 
+const handleEnded = () => {
+    const { id } = videoContainer.dataset;
+    fetch(`/api/videos/${id}/views`, {
+        method: "POST",
+    });
+};
+
 playBtn.addEventListener("click", handlePlayClick);
 muteBtn.addEventListener("click", handleMute);
 volumeRange.addEventListener("input", handleVolumeChange);
 video.addEventListener("loadedmetadata", handleMetaData);
 video.addEventListener("timeupdate", handleTimeUpdate);
+video.addEventListener("ended", handleEnded);
 timeline.addEventListener("input", handleTimeLine);
 fullScreenBtn.addEventListener("click", handleFullScreen);
 video.addEventListener("mousemove", handleVideoMouseMove);
